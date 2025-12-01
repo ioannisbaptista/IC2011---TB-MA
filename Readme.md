@@ -1,7 +1,32 @@
 # Project History and Motivation
-This project originated from a critical review of an Undergraduate Scientific Research paper, which analyzed the temporal evolution of Pulmonary Tuberculosis cases in the state of Maranhão, Brazil. Although the original study was conducted with limited resources, it contained a solid foundation and the potential to be transformed into a modern, reproducible, and methodologically rigorous analysis.
+This project originated from a critical review of an Undergraduate Scientific Research paper, which analyzed the temporal evolution of Pulmonary Tuberculosis cases in the state of Maranhão, Brazil. Although the original study was conducted with limited resources and amateur knowledge/experience, it contained a solid foundation and the potential to be transformed into a modern, reproducible, and methodologically rigorous analysis.
 
 The motivation behind this reconstruction is precisely to reconstruct this original study using contemporary Data Science tools, such as Python, Jupyter Notebook, and appropriate statistical libraries (e.g., pandas, statsmodels, matplotlib, scikit-learn). This involves applying current best practices in Exploratory Data Analysis (EDA), temporal validation, time series modeling, and documentation.
 
 This endeavor is, therefore, a complete re-implementation aimed at technical training, professional demonstration, and portfolio building. It preserves the original epidemiological theme while elevating the analytical rigor, methodological transparency, and visual quality of the results.
 This project does not replace the original academic study but complements it, offering an updated, reproducible, and modern version aligned with the expectations of a contemporary Data Scientist.
+
+# Introduction
+
+Pulmonary Tuberculosis (TB) is an infectious disease caused by the bacillus Mycobacterium tuberculosis, characterized by moderate infectivity and low pathogenicity. While it primarily affects the lungs, it can spread to other organs, such as bones, intestines, and kidneys (non-pulmonary forms).
+
+The main symptoms of the disease include chronic cough, blood-tinged sputum, fever, night sweats, and weight loss. In some cases, the disease can remain in a latent state, manifesting symptoms long after the initial infection. Beyond the molecular biology of the etiologic agent, factors influencing the disease's transmissibility include the host's genetic or immunological characteristics, and various social determinants, such as quality of life, sanitation infrastructure, and cultural practices, among others (KUMA et al., 2007).
+
+Brazil, like the rest of the world, has suffered the impact of tuberculosis incidence, particularly in the late 19th and early 20th centuries, when half of all infected individuals died. It was only in 1882, when Koch confirmed the existence of Mycobacterium tuberculosis, that the causality of the disease could be determined. However, the first effective treatments only became available almost half a century later.
+
+Despite these advances, the incidence of TB remains significant in Brazil (with approximately 80,000 new cases per year), resulting in an annual mortality of almost 6,000 deaths. In the state of Maranhão alone, there was a record of 28,613 notified TB cases between 2001 and 2010. Therefore, developing new technologies and studies that enable the control, prevention, and treatment of tuberculosis is fundamental.
+
+The study of Time Series is widely used in epidemiology, as this methodology provides essential components such as Trend and Seasonal Variation. The Trend is an estimation of the succession of data over time, while Seasonality describes variations relative to the trend across regular time periods.
+
+Determining these components allows for the prediction, with a certain degree of accuracy, of the number of cases in an epidemic for periods beyond the observation period (horizons). This accuracy depends on several factors and limitations, notably:
+* Reliability of the Data: The researcher cannot control for errors related to data collection, entry, and other steps carried out by the statistical research entity.
+* Prediction Horizon: It is not possible to obtain reliable forecasts for long periods. On average, ten years of observation are required to accurately estimate the occurrence for a single year (MONTARROYOS, 2005).
+* Model Selection: The accuracy is highly dependent on the model used for time series construction, which itself relies on the knowledge concerning the trend, seasonality, and random variation of the data.
+
+There is a history of successful research in health planning and policy, such as the work by FERRÓN et al. (1999), who analyzed environmental factors influencing patient admissions to hospitals and emergency services. Developed by the Madrid Public Health University Center, the authors calculated a demand prediction and successfully associated the admission of patients due to cardiovascular, organic, and respiratory reasons at the Juan Canalejo hospital. Among other findings, they concluded there was a considerable increase in admissions between the 11th and 14th day following a drop in maximum or minimum temperature. This was made possible through the application of an ARIMA model (Auto-Regressive Integrated Moving Average).
+
+In the field of epidemiology, we can cite the work of MONTARROYOS (2005), who compared temporal models to obtain the best estimate for the incidence of meningococcal diseases in Recife. Among other findings, he observed a higher incidence among males and an average increase of 1.2% per year during the study period, concluding that incidence increased in the months leading up to June, with a better prediction obtained through the SARIMA model (Seasonal Auto-Regressive Integrated Moving Average).
+
+Furthermore, in the area of environmental epidemiology, GOLDBERG et al. (2001) associated daily mortality from specific causes with ozone concentration levels. This study concluded that an increase in these levels directly contributes to the incidence of deaths from cardiorespiratory diseases.
+
+The proper construction of a temporal model for a specific epidemic over a certain observation period is, therefore, of great value to public health control entities, given the possibility of understanding the behavior of an epidemic with some precision during a determined timeframe. Thus, the present re-implementation seeks to perform a temporal analysis to examine the temporal trends of pulmonary tuberculosis incidence in the state of Maranhão during the period from 2001 to 2010, thereby facilitating the prediction, prevention, and control of the disease by competent authorities.
