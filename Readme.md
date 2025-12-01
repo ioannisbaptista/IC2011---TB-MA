@@ -1,0 +1,7 @@
+# Project History and Motivation
+This project originated from a critical review of an Undergraduate Scientific Research paper, which analyzed the temporal evolution of Pulmonary Tuberculosis cases in the state of Maranhão, Brazil. Although the original study was conducted with limited resources, it contained a solid foundation and the potential to be transformed into a modern, reproducible, and methodologically rigorous analysis.
+
+The motivation behind this reconstruction is precisely to reconstruct this original study using contemporary Data Science tools, such as Python, Jupyter Notebook, and appropriate statistical libraries (e.g., pandas, statsmodels, matplotlib, scikit-learn). This involves applying current best practices in Exploratory Data Analysis (EDA), temporal validation, time series modeling, and documentation.
+
+This endeavor is, therefore, a complete re-implementation aimed at technical training, professional demonstration, and portfolio building. It preserves the original epidemiological theme while elevating the analytical rigor, methodological transparency, and visual quality of the results.
+This project does not replace the original academic study but complements it, offering an updated, reproducible, and modern version aligned with the expectations of a contemporary Data Scientist.
