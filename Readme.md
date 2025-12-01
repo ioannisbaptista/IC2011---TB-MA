@@ -8,13 +8,13 @@ This project does not replace the original academic study but complements it, of
 
 # Introduction
 
-Pulmonary Tuberculosis (TB) is an infectious disease caused by the bacillus Mycobacterium tuberculosis, characterized by moderate infectivity and low pathogenicity. While it primarily affects the lungs, it can spread to other organs, such as bones, intestines, and kidneys (non-pulmonary forms).
+Pulmonary Tuberculosis (PT) is an infectious disease caused by the bacillus Mycobacterium tuberculosis, characterized by moderate infectivity and low pathogenicity. While it primarily affects the lungs, it can spread to other organs, such as bones, intestines, and kidneys (non-pulmonary forms).
 
 The main symptoms of the disease include chronic cough, blood-tinged sputum, fever, night sweats, and weight loss. In some cases, the disease can remain in a latent state, manifesting symptoms long after the initial infection. Beyond the molecular biology of the etiologic agent, factors influencing the disease's transmissibility include the host's genetic or immunological characteristics, and various social determinants, such as quality of life, sanitation infrastructure, and cultural practices, among others (KUMA et al., 2007).
 
 Brazil, like the rest of the world, has suffered the impact of tuberculosis incidence, particularly in the late 19th and early 20th centuries, when half of all infected individuals died. It was only in 1882, when Koch confirmed the existence of Mycobacterium tuberculosis, that the causality of the disease could be determined. However, the first effective treatments only became available almost half a century later.
 
-Despite these advances, the incidence of TB remains significant in Brazil (with approximately 80,000 new cases per year), resulting in an annual mortality of almost 6,000 deaths. In the state of Maranhão alone, there was a record of 28,613 notified TB cases between 2001 and 2010. Therefore, developing new technologies and studies that enable the control, prevention, and treatment of tuberculosis is fundamental.
+Despite these advances, the incidence of PT remains significant in Brazil (with approximately 80,000 new cases per year), resulting in an annual mortality of almost 6,000 deaths. In the state of Maranhão alone, there was a record of 28,613 notified PT cases between 2001 and 2010. Therefore, developing new technologies and studies that enable the control, prevention, and treatment of tuberculosis is fundamental.
 
 The study of Time Series is widely used in epidemiology, as this methodology provides essential components such as Trend and Seasonal Variation. The Trend is an estimation of the succession of data over time, while Seasonality describes variations relative to the trend across regular time periods.
 
