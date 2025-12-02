@@ -29,4 +29,84 @@ In the field of epidemiology, we can cite the work of MONTARROYOS (2005), who co
 
 Furthermore, in the area of environmental epidemiology, GOLDBERG et al. (2001) associated daily mortality from specific causes with ozone concentration levels. This study concluded that an increase in these levels directly contributes to the incidence of deaths from cardiorespiratory diseases.
 
-The proper construction of a temporal model for a specific epidemic over a certain observation period is, therefore, of great value to public health control entities, given the possibility of understanding the behavior of an epidemic with some precision during a determined timeframe. Thus, the present re-implementation seeks to perform a temporal analysis to examine the temporal trends of pulmonary tuberculosis incidence in the state of Maranhão during the period from 2001 to 2010, thereby facilitating the prediction, prevention, and control of the disease by competent authorities.
+The proper construction of a temporal model for a specific epidemic over a certain observation period is, therefore, of great value to public health control entities, given the possibility of understanding the behavior of an epidemic with some precision during a determined timeframe. Thus, the present re-implementation seeks to perform a data analysis to examine the temporal trends of pulmonary tuberculosis incidence in the state of Maranhão during the period from 2001 to 2010, thereby facilitating the prediction, prevention, and control of the disease by competent authorities. More specifically, we will organize the data, perform exploratory data analysis (EDA), fit time series models to forecast future incidence rates, genereate interpretable visualizations of the results and discuss the findings in the context of public health.
+
+# Materials and Methods
+
+### Study Design and Data Sources
+
+A descriptive study was conducted, using information on the detection of pulmonary tuberculosis cases and human development across the 217 municipalities of the state of Maranhão, covering the period from January 2001 to December 2010.
+
+The number of detected cases of pulmonary tuberculosis during this period was sourced from the National Notifiable Diseases Information System (SINAN) of the Ministry of Health.
+
+### Exploratory Analysis and Stationarity
+
+The aggregated time series underwent an Initial Exploratory Analysis, including graphical visualization to identify trend (long-term growth or decline) and seasonality (annual repeating patterns).
+Subsequently, Stationarity Tests were performed to verify if the series' statistical properties (mean and variance) remained constant over time, a prerequisite for applying Box-Jenkins models (ARIMA/SARIMA).
+- Augmented Dickey-Fuller (ADF) Test: Used to test for the presence of a unit root (non-stationarity).
+- Kwiatkowski-Phillips-Schmidt-Shin (KPSS) Test: Used to test for stationarity around a mean level or deterministic trend.
+
+If the series was deemed non-stationary, differentiation ($d$ and $D$) was applied until stationarity was achieved.
+
+### Predictive Modeling
+
+To obtain projections of pulmonary tuberculosis incidence, two robust time series models were employed: the SARIMA (Seasonal AutoRegressive Integrated Moving Average) and the ETS (Error, Trend, Seasonality - Seasonal Holt-Winters Exponential Smoothing) model.
+
+#### Train and Test Split
+
+The time series was divided into the following datasets for modeling and validation:
+- Training Set (Train): January 2001 to December 2009. Used to fit and train the models.
+- Testing Set (Test): January 2010 to December 2010 (12 months). Used to validate the predictive performance of the models on unseen real-world data.
+
+#### SARIMA Model and Optimization (Grid Search)
+
+The SARIMA model $\mathbf{(p, d, q) \times (P, D, Q)_s}$ was selected for its capacity to handle both non-seasonal and seasonal components. Hyperparameter optimization was conducted via a limited Grid Search.
+- Search Parameters: Combinations were tested across the following ranges ($s=12$ was fixed as the seasonal period):$$p, q \in \{0, 1, 2\}, \quad d \in \{0, 1\}, \quad P, Q \in \{0, 1\}, \quad D \in \{0, 1\}$$
+- Best Model Selection: For each combination, the model was fitted on the Training Set, and its performance was evaluated on the Test Set (2010). The model yielding the lowest RMSE (Root Mean Squared Error) on the test set was selected as the optimal candidate.
+
+#### ETS Model (Seasonal Holt-Winters)
+
+The ETS model was utilized as a baseline for comparison, employing a standard configuration of Additive Trend and Additive Seasonality, suitable for series with constant seasonal fluctuations.
+
+### Evaluation and Final Results
+
+The performance of the optimized SARIMA and ETS models was quantified on the Test Set (2010) using three key error metrics:
+- Mean Absolute Error (MAE): The average of the absolute errors.
+- Root Mean Squared Error (RMSE): More sensitive to large errors/outliers.
+- Mean Absolute Percentage Error (MAPE): Error expressed as a percentage, aiding practical interpretation.
+
+The model with the lowest RMSE was considered superior. The chosen model was then refitted on the full Training Set and used to generate the final forecast for the period of January to December 2011, including a 95% Confidence Interval.
+
+### Tools and Software
+
+The entire analysis was performed using the Python programming language, relying on the following key libraries:
+- `pandas` and `numpy`: Data manipulation and numerical computation.
+- `statsmodels` (modules SARIMAX, adfuller, kpss): SARIMA modeling and statistical testing.
+- `statsmodels.tsa.api` (ExponentialSmoothing): ETS modeling.
+- `sklearn.metrics`: Calculation of error metrics (MAE, RMSE, MAPE).
+- `matplotlib`: Visualization and plotting of results.
+
+# Results and Discussion
+
+![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/
+ts_monthly_cases_line_excel_style.png)
+
+<div style="float: left; width: 33%;box-sizing: border-box; padding: 0 5px;">
+  <img src="figures/boxplot_month_by_month.png" alt="Descrição 1" style="width: 100%;">
+  <p align="center">Figure X: Monthly distribution of cases by month-of-year</p>
+</div>
+<div style="float: left; width: 30.9%;box-sizing: border-box; padding: 0 5px;">
+  <img src="figures/heatmap_year_month_cases.png" alt="Descrição 2" style="width: 100%;">
+  <p align="center">Figura X: Heatmap: Year x Month cases</p>
+</div>
+<div style="float: left; width: 32.5%;box-sizing: border-box; padding: 0 5px;">
+  <img src="figures/histogram_monthly_cases.png" alt="Descrição 3" style="width: 100%;">
+  <p align="center">Figura X: Histogram of monthly cases</p>
+</div>
+
+<div style="clear: both;"></div>
+
+![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/stl_decomposition.png)
+![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/acf_monthly.png)
+![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/pacf_monthly.png)
+![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/history_plus_forecast_2011.png)
