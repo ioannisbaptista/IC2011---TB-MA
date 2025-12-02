@@ -91,20 +91,22 @@ The entire analysis was performed using the Python programming language, relying
 ![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/
 ts_monthly_cases_line_excel_style.png)
 
-<div style="float: left; width: 33%;box-sizing: border-box; padding: 0 5px;">
-  <img src="figures/boxplot_month_by_month.png" alt="Descrição 1" style="width: 100%;">
-  <p align="center">Figure X: Monthly distribution of cases by month-of-year</p>
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <div style="flex: 1; margin-right: 10px; text-align: center;">
+        <img src="figures/boxplot_month_by_month.png" alt="Monthly distribution of cases by month-of-year" style="width: 100%;">
+        <p>Figure 1: Monthly distribution of cases by month-of-year</p>
+    </div>
+    
+    <div style="flex: 1; margin-right: 10px; text-align: center;">
+        <img src="figures/heatmap_year_month_cases.png" alt="Heatmap: Year x Month cases" style="width: 100%;">
+        <p>Figure 2: Heatmap: Year x Month cases</p>
+    </div>
+    
+    <div style="flex: 1; text-align: center;">
+        <img src="figures/histogram_monthly_cases.png" alt="Histogram of monthly cases" style="width: 100%;">
+        <p>Figure 3: Histogram of monthly cases</p>
+    </div>
 </div>
-<div style="float: left; width: 30.9%;box-sizing: border-box; padding: 0 5px;">
-  <img src="figures/heatmap_year_month_cases.png" alt="Descrição 2" style="width: 100%;">
-  <p align="center">Figura X: Heatmap: Year x Month cases</p>
-</div>
-<div style="float: left; width: 32.5%;box-sizing: border-box; padding: 0 5px;">
-  <img src="figures/histogram_monthly_cases.png" alt="Descrição 3" style="width: 100%;">
-  <p align="center">Figura X: Histogram of monthly cases</p>
-</div>
-
-<div style="clear: both;"></div>
 
 ![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/stl_decomposition.png)
 ![Série Temporal de casos notificados de Tuberculose Pulmonar no Estado do Maranhão de janeiro de 2001 a dezembro de 2010](figures/acf_monthly.png)
