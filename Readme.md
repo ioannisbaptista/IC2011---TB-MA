@@ -61,7 +61,10 @@ The time series was divided into the following datasets for modeling and validat
 #### SARIMA Model and Optimization (Grid Search)
 
 The SARIMA model $\mathbf{(p, d, q) \times (P, D, Q)_s}$ was selected for its capacity to handle both non-seasonal and seasonal components. Hyperparameter optimization was conducted via a limited Grid Search.
-- Search Parameters: Combinations were tested across the following ranges ($s=12$ was fixed as the seasonal period): $$p, q \in \{0, 1, 2\}, \quad d \in \{0, 1\}, \quad P, Q \in \{0, 1\}, \quad D \in \{0, 1\}$$
+- Search Parameters: Combinations were tested across the following ranges ($s=12$ was fixed as the seasonal period):
+
+$$p, q \in \{0, 1, 2\}, \quad d \in \{0, 1\}, \quad P, Q \in \{0, 1\}, \quad D \in \{0, 1\}$$
+
 - Best Model Selection: For each combination, the model was fitted on the Training Set, and its performance was evaluated on the Test Set (2010). The model yielding the lowest RMSE (Root Mean Squared Error) on the test set was selected as the optimal candidate.
 
 #### ETS Model (Seasonal Holt-Winters)
